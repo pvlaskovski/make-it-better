@@ -10,8 +10,19 @@
 </head>
 
 <body>
-    <h1>Main</h1>
-    {% include navigation.html %}
+
+    <header class="site-header">
+        <p>The world is you and only you can change it</p>
+        
+        {% if page.title == "Home" %}
+            <h1>Website Logo</h1>
+        {% else %}
+            <p>Website Logo in paragraph</p>
+        {% endif %}
+
+        {% include navigation.html %}
+    </header>
+
     {{ content }}
 
     {% if page.title == "Blog" %}
