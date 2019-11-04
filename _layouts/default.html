@@ -12,12 +12,12 @@
 <body>
 
     <header class="site-header">
-        <p>The world is you and only you can change it</p>
+        <p class="header-slogan">The world is you and only you can change it</p>
         
         {% if page.title == "Home" %}
-            <h1>Website Logo</h1>
+            <h1 class="header-logo">Website Logo</h1>
         {% else %}
-            <p>Website Logo in paragraph</p>
+            <p class="header-logo">Website Logo in paragraph</p>
         {% endif %}
 
         {% include navigation.html %}
