@@ -7,4 +7,9 @@
 .site-header .header-nav li{
     display: block;
     text-align: center;
+    margin: auto;
+}
+
+.site-header .header-nav li a{
+    display: block;
 }
