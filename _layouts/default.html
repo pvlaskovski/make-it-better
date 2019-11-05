@@ -29,11 +29,38 @@
         {% include navigation.html %}
     </header>
 
-    {{ content }}
+    <main class="site-content">
+        {{ content }}
 
-    {% if page.title == "Blog" %}
-        {% include all-blogposts.html %}
-    {% endif %}
+        <!-- SPECIFIC FOR THE HOMEPAGE -->
+        {% if page.title == "Home" %}
+            <h2>Latest posts</h2>
+
+            <!-- Show the latest 3 posts -->
+            {% for post in site.posts limit:3 %}
+            <section class="site-content-latest-posts">
+                <h4>
+                    <a href="{{ site.baseurl }}/{{ post.url }}">
+                        {{post.title}}
+                    </a>
+                </h4>
+                <!-- shows only 30 words -->
+                <p>{{ post.excerpt | truncatewords: 30 }}</p> 
+                <a href="{{ site.baseurl }}/{{ post.url }}">Read more</a>
+            </section>
+            {% endfor %}
+
+        {% endif %}
+
+        <!-- SPECIFIC FOR THE BLOGPOST PAGE -->
+        {% if page.title == "Blog" %}
+            <section class="blog-all-posts">
+                {% include all-blogposts.html %}
+            </section>
+        {% endif %}
+    </main>
+
+
 
 </body>
 
