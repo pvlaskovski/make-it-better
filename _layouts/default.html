@@ -34,21 +34,28 @@
 
         <!-- SPECIFIC FOR THE HOMEPAGE -->
         {% if page.title == "Home" %}
-            <h2>Latest posts</h2>
 
-            <!-- Show the latest 3 posts -->
-            {% for post in site.posts limit:3 %}
             <section class="site-content-latest-posts">
-                <h4>
-                    <a href="{{ site.baseurl }}/{{ post.url }}">
-                        {{post.title}}
-                    </a>
-                </h4>
-                <!-- shows only 30 words -->
-                <p>{{ post.excerpt | truncatewords: 30 }}</p> 
-                <a href="{{ site.baseurl }}/{{ post.url }}">Read more</a>
+                <header>
+                    <h2>Latest posts</h2>
+                </header>
+
+                <!-- Show the latest 3 posts -->
+                {% for post in site.posts limit:3 %}
+                <section class="site-content-post-preview">
+                    <h4>
+                        <a href="{{ site.baseurl }}/{{ post.url }}">
+                            {{post.title}}
+                        </a>
+                    </h4>
+                    <!-- shows only 30 words -->
+                    <p>{{ post.excerpt | truncatewords: 30 }}</p> 
+                    <a href="{{ site.baseurl }}/{{ post.url }}">Read more</a>
+                </section>
+                {% endfor %}
+                
             </section>
-            {% endfor %}
+
 
         {% endif %}
 
