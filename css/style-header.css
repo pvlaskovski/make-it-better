@@ -9,8 +9,6 @@
     overflow: hidden;
 }
 
-
-
 .site-header .header-nav li:not(:last-child){
     margin-bottom: 0.2em;
 }
